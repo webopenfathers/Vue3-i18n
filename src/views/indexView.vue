@@ -34,6 +34,7 @@
 <script setup>
 import { reactive } from 'vue'
 import { useRouter } from 'vue-router'
+import { watchSwitchLang } from '@/utils/i18n'
 
 const router = useRouter()
 const formInline = reactive({
@@ -45,6 +46,15 @@ const formInline = reactive({
 const onSubmit = () => {
   console.log('submit!')
 }
+
+const fetchData = () => {
+  setTimeout(() => {
+    console.log('获取数据成功')
+  }, 1000)
+}
+fetchData()
+
+watchSwitchLang(fetchData)
 </script>
 
 <style>
